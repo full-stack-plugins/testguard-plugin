@@ -2,7 +2,7 @@
 
 > 生命周期 CLI 已实现；check 返回 DESIGN_ONLY。
 
-**版本**：0.1.0 · **许可证**：Apache-2.0 · **技能**：1 个
+**版本**：0.1.1 · **许可证**：Apache-2.0 · **技能**：1 个
 
 [English](README.en.md)
 
