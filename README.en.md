@@ -1,6 +1,6 @@
 # TestGuard (验收测试防护)
 
-> 生命周期 CLI 已实现；check 返回 DESIGN_ONLY。
+> This wrapper has not connected the separate engine: `check` returns `DESIGN_ONLY` with exit code 3, without invoking the engine or producing passing evidence. Engine functionality does not establish wrapper functionality.
 
 **Version**: 0.1.1 · **License**: Apache-2.0 · **Skills**: 1
 
@@ -23,10 +23,7 @@ TestGuard is an independent plugin in the Partme Guard family. Its command prefi
 
 ## Installation
 
-~~~bash
-codex plugin marketplace add partme-ai/full-stack-plugins
-codex plugin add testguard-plugin@full-stack-plugins
-~~~
+Select plugin ID `testguard` from the [Full Stack Plugins marketplace](https://github.com/partme-ai/full-stack-plugins). The repository name `testguard-plugin` is not the plugin ID. The installation ref is `v0.1.1`; whether a host exposes `bin/` on PATH requires host-specific verification.
 
 ## Quick Start
 
@@ -38,7 +35,7 @@ testguard status
 
 ## Current Status
 
-生命周期 CLI 已实现；check 返回 DESIGN_ONLY。
+This wrapper has not connected the separate engine: `check` returns `DESIGN_ONLY` with exit code 3, without invoking the engine or producing passing evidence. Engine functionality does not establish wrapper functionality.
 
 No PASS without real execution evidence. Unimplemented capabilities report DESIGN_ONLY or UNVERIFIED.
 
@@ -55,7 +52,9 @@ See product-docs/TestGuard/ and docs/ for command lifecycle, read-only checks an
 ## Verification
 
 ~~~bash
-python3 -m pytest -q
+sh bin/testguard version
+# Expected: DESIGN_ONLY and exit code 3
+sh bin/testguard check
 ~~~
 
 ## License

@@ -1,6 +1,6 @@
 # TestGuard（验收测试防护）
 
-> 生命周期 CLI 已实现；check 返回 DESIGN_ONLY。
+> 本 wrapper 尚未接入独立引擎；`check` 固定返回 `DESIGN_ONLY`、退出码3，不会调用引擎或产生通过证据。独立引擎的已有功能不等于本插件已可执行。
 
 **版本**：0.1.1 · **许可证**：Apache-2.0 · **技能**：1 个
 
@@ -23,10 +23,7 @@ TestGuard 是 Partme Guard 研发防护体系中的独立插件，命令前缀�
 
 ## 安装
 
-~~~bash
-codex plugin marketplace add partme-ai/full-stack-plugins
-codex plugin add testguard-plugin@full-stack-plugins
-~~~
+在 [Full Stack Plugins 市场](https://github.com/partme-ai/full-stack-plugins) 中选择插件 ID `testguard`。仓库名 `testguard-plugin` 与插件 ID 不同。当前固定安装版本为 `v0.1.1`；宿主安装是否自动将 `bin/` 加入 PATH 需按宿主验证。
 
 ## 快速开始
 
@@ -38,7 +35,7 @@ testguard status
 
 ## 当前状态
 
-生命周期 CLI 已实现；check 返回 DESIGN_ONLY。
+本 wrapper 尚未接入独立引擎；`check` 固定返回 `DESIGN_ONLY`、退出码3，不会调用引擎或产生通过证据。独立引擎的已有功能不等于本插件已可执行。
 
 没有真实执行证据时，不报告 PASS；未实现能力报告 DESIGN_ONLY 或 UNVERIFIED。
 
@@ -55,7 +52,9 @@ testguard status
 ## 验证
 
 ~~~bash
-python3 -m pytest -q
+sh bin/testguard version
+# Expected: DESIGN_ONLY and exit code 3
+sh bin/testguard check
 ~~~
 
 ## 许可证
